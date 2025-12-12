@@ -1,0 +1,45 @@
+# conceptual pseudocode for mapping wand/intent to tasks
+class IntentEngine:
+    def __init__(self):
+        self.gesture_map = {
+            "sweep": "gather_items",
+            "point": "target_item",
+            "circle": "organize_zone"
+        }
+
+    def interpret_gesture(self, gesture):
+        return self.gesture_map.get(gesture, "request_confirmation")
+
+class Orchestrator:
+    def __init__(self, units):
+        self.units = units  # list of robot/controller objects
+
+    def execute(self, command, target=None):
+        plan = self.plan_task(command, target)
+        for step in plan:
+            assigned = self.assign_unit(step)
+            assigned.perform(step)
+            if not assigned.health_check():
+                self.replace_unit(assigned)
+                self.rollback_or_continue(step)
+
+    def plan_task(self, command, target):
+        # simple planner: break command into steps
+        if command == "gather_items":
+            return ["scan_zone", "collect_item", "dock_to_anchor", "store_item"]
+        if command == "organize_zone":
+            return ["scan_zone", "sort_items", "arrange_shelf"]
+        return ["request_user_confirmation"]
+
+    def assign_unit(self, step):
+        # pick available healthy unit
+        for u in self.units:
+            if u.is_available() and u.health_check():
+                return u
+        raise RuntimeError("No available units")
+
+# usage
+engine = IntentEngine()
+orchestrator = Orchestrator(units=[/* robot instances */])
+command = engine.interpret_gesture("sweep")
+orchestrator.execute(command, target="living_room")
