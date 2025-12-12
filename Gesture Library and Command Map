@@ -1,0 +1,47 @@
+- **Sweep**  
+  - IMU pattern: horizontal arc left-to-right with moderate speed  
+  - Command: gather_soft_items (collect toys, plush, light clutter)  
+  - Confirmation: none (low risk)  
+  - Risk level: Low
+
+- **Point**  
+  - IMU pattern: quick forward thrust with brief hold  
+  - Command: target_item (highlight an object for pickup or relocation)  
+  - Confirmation: app notification for parent if object class = high-risk  
+  - Risk level: Low–Medium
+
+- **Circle**  
+  - IMU pattern: clockwise circle in front of user  
+  - Command: organize_zone (sort and place items into predefined bins)  
+  - Confirmation: parent approval required for new zones (medium risk)  
+  - Risk level: Medium
+
+- **Tap**  
+  - IMU pattern: single button press or quick downward tap motion  
+  - Command: scan_zone (inventory and report missing/extra items)  
+  - Confirmation: none (informational)  
+  - Risk level: Low
+
+- **Lift**  
+  - IMU pattern: upward flick with two-handed hold or double-tap  
+  - Command: pick_light_object (single robot picks a light object)  
+  - Confirmation: parent confirmation for objects > weight threshold  
+  - Risk level: Medium
+
+- **Cross**  
+  - IMU pattern: quick X motion left-right then right-left  
+  - Command: stop_and_reset (immediate stop, rollback last action)  
+  - Confirmation: none (emergency)  
+  - Risk level: High (safety action)
+
+- **Wave**  
+  - IMU pattern: slow back-and-forth wave with haptic feedback  
+  - Command: summon_helper (call nearest available unit to assist)  
+  - Confirmation: none (low risk)  
+  - Risk level: Low
+
+- **Hold**  
+  - IMU pattern: hold wand steady for 2 seconds with button pressed  
+  - Command: confirm_action (parental override or child confirmation)  
+  - Confirmation: acts as second factor when required  
+  - Risk level: N/A (control)
