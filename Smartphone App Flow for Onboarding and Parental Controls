@@ -1,0 +1,34 @@
+1. Welcome Screen
+   - Short intro video; "Pair Wand" and "Parent Setup" buttons.
+
+2. Pair Wand
+   - Scan QR on wand or press wand button to enter pairing mode.
+   - Parent account PIN creation and optional biometric lock.
+
+3. Calibration Game
+   - Child copies 4 gestures with guided animation.
+   - System stores gesture signatures locally and shows success badge.
+
+4. Scope and Rooms
+   - Parent selects allowed rooms and object classes (toys, dishes, tools).
+   - Set weight and height thresholds for automated moves.
+
+5. Safety Settings
+   - Two-Factor Rules: define which commands require parent confirmation.
+   - Emergency Stop: enable physical button, app button, and voice PIN.
+
+6. Permissions and Privacy
+   - Local processing toggle for camera/BCI; optional encrypted cloud sync.
+   - Data retention settings and audit log access.
+
+7. Daily Missions and Rewards
+   - Configure missions, points, and family leaderboard.
+   - Enable notifications and quiet hours.
+
+8. Live Control Screen
+   - Gesture indicator, available units list, current task queue, and manual override.
+   - Quick parental confirm modal for medium/high risk actions.
+
+9. Logs and Audit
+   - Immutable action log with timestamps, unit IDs, and confirmation records.
+   - Exportable summary for stewardship review (parent-facing).
